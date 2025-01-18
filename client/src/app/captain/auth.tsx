@@ -13,18 +13,21 @@ import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import CustomText from "@/components/shared/CustomText";
 import PhoneInput from "@/components/shared/PhoneInput";
 import CustomButton from "@/components/shared/CustomButton";
+import { resetAndNavigate } from "@/utils/Helpers";
 
 const Auth = () => {
   const [phone, setPhone] = useState("");
 
-  const handleNext = () => {};
+  const handleNext = () => {
+    resetAndNavigate("/captain/home");
+  };
 
   return (
     <SafeAreaView style={authStyles.container}>
       <ScrollView contentContainerStyle={authStyles.container}>
         <View style={commonStyles.flexRowBetween}>
           <Image
-            source={require("@/assets/images/logo_t.png")}
+            source={require("@/assets/images/captain_logo.png")}
             style={authStyles.logo}
           />
           <TouchableOpacity style={authStyles.flexRowGap}>
@@ -36,7 +39,7 @@ const Auth = () => {
         </View>
 
         <CustomText fontFamily="Medium" variant="h6">
-          What's your number?
+          Good to see you, captain!
         </CustomText>
         <CustomText
           variant="h7"
